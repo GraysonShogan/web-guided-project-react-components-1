@@ -8,10 +8,16 @@
   - We never tamper with state: `healthPoints++`, `healthPoints--` or `someState.push(item)` is FORBIDDEN
   - We use the dedicated "state updater" to schedule a state change: `setHealthPoints(healthPoints + 1)`
 */
-import React from "react";
+import React, { useState } from "react";
 
 function Playground(props) {
-  return <h1>PLAYGROUND</h1>;
+  const [count, setCount] = useState(0);
+  console.log(count);
+  return (
+    <div>
+      <p>{count}</p>
+    </div>
+  );
 }
 
 export default Playground;
