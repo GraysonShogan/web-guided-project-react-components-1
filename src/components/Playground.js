@@ -12,10 +12,29 @@ import React, { useState } from "react";
 
 function Playground(props) {
   const [count, setCount] = useState(0);
-  console.log(count);
+  const [spinnerOn, setSpinnerOn] = useState(false);
+  // const [name, setName] = useState("");
+
+  // const updateName = () => {
+  //   setName("Grayson");
+  // };
+  if (spinnerOn) {
+    return (
+      <div className="container">
+        <h3>The spinner is {spinnerOn ? "ON" : "OFF"}</h3>
+        <button onClick={() => setSpinnerOn(false)}>Turn spinner off</button>
+      </div>
+    );
+  }
+
   return (
     <div>
       <p>{count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount(count - 1)}>Decrement</button>
+      {/* <button onClick={updateName}>Set your Name!</button> */}
+      <h3>The spinner is {spinnerOn ? "ON" : "OFF"}</h3>
+      <button onClick={() => setSpinnerOn(!spinnerOn)}>Toggle Spinner</button>
     </div>
   );
 }
