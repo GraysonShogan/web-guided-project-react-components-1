@@ -13,6 +13,7 @@ import React, { useState } from "react";
 function Playground(props) {
   const [count, setCount] = useState(0);
   const [spinnerOn, setSpinnerOn] = useState(false);
+  const [weapon, setWeapon] = useState("scissors");
   // const [name, setName] = useState("");
 
   // const updateName = () => {
@@ -35,6 +36,10 @@ function Playground(props) {
       {/* <button onClick={updateName}>Set your Name!</button> */}
       <h3>The spinner is {spinnerOn ? "ON" : "OFF"}</h3>
       <button onClick={() => setSpinnerOn(!spinnerOn)}>Toggle Spinner</button>
+      <h3>The current weapon is: {weapon}</h3>
+      <button onClick={() => setWeapon("scissors")}>Pick scissors</button>
+      <button onClick={() => setWeapon("rock")}>Pick rock</button>
+      <button onClick={() => setWeapon("paper")}>Pick paper</button>
     </div>
   );
 }
